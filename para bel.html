@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A pesar de todo, Bel ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 40, 110, 0.22),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 30%,
+                    rgba(150, 60, 255, 0.22),
+                    transparent 32%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(255, 80, 150, 0.18),
+                    transparent 35%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #08010d,
+                    #19051b,
+                    #0b0211
+                );
+        }
+
+
+        /* =====================================
+           FONDO ANIMADO
+        ===================================== */
+
+        .aurora {
+            position: fixed;
+
+            width: 140vw;
+            height: 140vh;
+
+            left: -20vw;
+            top: -20vh;
+
+            pointer-events: none;
+
+            z-index: -3;
+
+            filter: blur(80px);
+
+            background:
+                radial-gradient(
+                    ellipse at 25% 35%,
+                    rgba(255, 20, 110, 0.13),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    ellipse at 75% 65%,
+                    rgba(130, 40, 255, 0.13),
+                    transparent 35%
+                );
+
+            animation: auroraMove 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraMove {
+
+            from {
+                transform:
+                    translate(-3%, -2%)
+                    scale(1);
+            }
+
+            to {
+                transform:
+                    translate(3%, 2%)
+                    scale(1.08);
+            }
+        }
+
+
+        /* =====================================
+           ESTRELLAS
+        ===================================== */
+
+        #stars {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+
+            width: 2px;
+            height: 2px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.15;
+
+                transform: scale(0.7);
+            }
+
+            50% {
+                opacity: 1;
+
+                transform: scale(1.6);
+            }
+        }
+
+
+        /* =====================================
+           CORAZONES FLOTANTES
+        ===================================== */
+
+        #hearts {
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+
+            bottom: -40px;
+
+            color: #ff6f9f;
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(255, 70, 140, 0.7)
+                );
+
+            animation:
+                floatHeart linear forwards;
+        }
+
+        @keyframes floatHeart {
+
+            0% {
+                transform:
+                    translateY(0)
+                    rotate(0deg)
+                    scale(0.7);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            80% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform:
+                    translateY(-115vh)
+                    rotate(360deg)
+                    scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* =====================================
+           CONTENEDOR
+        ===================================== */
+
+        .container {
+
+            width: min(900px, 92%);
+
+            margin: auto;
+
+            padding:
+                70px 0 100px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =====================================
+           PORTADA
+        ===================================== */
+
+        .cover {
+
+            min-height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .small-title {
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color: #e7a8bd;
+
+            margin-bottom: 25px;
+
+            opacity: 0.8;
+        }
+
+        .main-heart {
+
+            font-size: 70px;
+
+            margin-bottom: 15px;
+
+            animation:
+                heartbeat 1.8s infinite ease-in-out;
+
+            filter:
+                drop-shadow(
+                    0 0 25px
+                    rgba(255, 40, 110, 0.8)
+                );
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.16);
+            }
+        }
+
+        h1 {
+
+            font-size:
+                clamp(50px, 12vw, 105px);
+
+            font-weight: normal;
+
+            font-style: italic;
+
+            line-height: 1;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #ffc3d8,
+                    #ff5b91,
+                    #ffffff
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                titleShine 6s linear infinite;
+
+            text-shadow:
+                0 0 35px
+                rgba(255, 70, 140, 0.2);
+        }
+
+        @keyframes titleShine {
+
+            from {
+                background-position: 0%;
+            }
+
+            to {
+                background-position: 300%;
+            }
+        }
+
+        .subtitle {
+
+            max-width: 650px;
+
+            margin-top: 30px;
+
+            color: #eac5d2;
+
+            font-size:
+                clamp(16px, 3vw, 21px);
+
+            line-height: 1.7;
+
+            font-style: italic;
+        }
+
+
+        /* =====================================
+           BOTÓN MÚSICA
+        ===================================== */
+
+        .music-button {
+
+            margin-top: 35px;
+
+            padding:
+                14px 28px;
+
+            border-radius: 999px;
+
+            border:
+                1px solid
+                rgba(255, 180, 205, 0.35);
+
+            background:
+                rgba(255, 80, 130, 0.10);
+
+            color: white;
+
+            font-family: Georgia, serif;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 10px 40px
+                rgba(0, 0, 0, 0.3),
+
+                0 0 25px
+                rgba(255, 60, 130, 0.08);
+        }
+
+        .music-button:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.03);
+
+            background:
+                rgba(255, 80, 130, 0.20);
+
+            box-shadow:
+                0 0 35px
+                rgba(255, 60, 130, 0.25);
+        }
+
+
+        /* =====================================
+           CARTA
+        ===================================== */
+
+        .letter {
+
+            position: relative;
+
+            padding:
+                clamp(30px, 7vw, 65px);
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.10),
+                    rgba(255, 255, 255, 0.035)
+                );
+
+            border:
+                1px solid
+                rgba(255, 190, 210, 0.17);
+
+            backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+
+                0 30px 100px
+                rgba(0, 0, 0, 0.45),
+
+                inset 0 1px
+                rgba(255, 255, 255, 0.12);
+
+            animation:
+                fadeIn 2s ease forwards;
+        }
+
+        .letter::before {
+
+            content: "♥";
+
+            position: absolute;
+
+            top: -27px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            font-size: 38px;
+
+            color: #ff719e;
+
+            filter:
+                drop-shadow(
+                    0 0 15px
+                    rgba(255, 50, 120, 0.7)
+                );
+        }
+
+
+        /* =====================================
+           POEMA
+        ===================================== */
+
+        .poem {
+
+            font-size:
+                clamp(17px, 2.3vw, 20px);
+
+            line-height: 1.9;
+
+            color: #f8e8ee;
+
+            text-align: left;
+        }
+
+        .poem p {
+
+            margin-bottom: 32px;
+        }
+
+        .poem-title {
+
+            text-align: center;
+
+            font-size:
+                clamp(28px, 5vw, 42px);
+
+            color: #ffc0d4;
+
+            font-style: italic;
+
+            margin-bottom: 45px;
+
+            text-shadow:
+                0 0 25px
+                rgba(255, 70, 140, 0.25);
+        }
+
+
+        /* =====================================
+           FRASES DESTACADAS
+        ===================================== */
+
+        .highlight {
+
+            color: #ff9fba;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 0 12px
+                rgba(255, 80, 140, 0.2);
+        }
+
+
+        /* =====================================
+           FINAL
+        ===================================== */
+
+        .final-message {
+
+            text-align: center;
+
+            margin-top: 50px;
+
+            font-size:
+                clamp(25px, 5vw, 40px);
+
+            line-height: 1.5;
+
+            font-style: italic;
+
+            color: #ffd3e1;
+
+            text-shadow:
+                0 0 25px
+                rgba(255, 70, 140, 0.3);
+        }
+
+
+        .signature {
+
+            text-align: right;
+
+            margin-top: 50px;
+
+            font-size: 24px;
+
+            line-height: 1.6;
+
+            color: #ffbfd2;
+
+            font-style: italic;
+        }
+
+
+        /* =====================================
+           ANIMACIÓN
+        ===================================== */
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 50px;
+
+            color: #c998aa;
+
+            font-size: 13px;
+
+            opacity: 0.6;
+        }
+
+
+        /* =====================================
+           CELULAR
+        ===================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                padding-top: 30px;
+            }
+
+            .letter {
+
+                padding:
+                    38px 25px;
+
+                border-radius: 23px;
+            }
+
+            .poem {
+
+                font-size: 16px;
+
+                line-height: 1.8;
+            }
+
+            .main-heart {
+
+                font-size: 55px;
+            }
+
+            .subtitle {
+
+                font-size: 16px;
+            }
+
+            .signature {
+
+                font-size: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         FONDO
+    ====================================== -->
+
+    <div class="aurora"></div>
+
+    <div id="stars"></div>
+
+    <div id="hearts"></div>
+
+
+    <main class="container">
+
+
+        <!-- =====================================
+             PORTADA
+        ====================================== -->
+
+        <section class="cover">
+
+            <div class="small-title">
+                Una carta para alguien especial
+            </div>
+
+
+            <div class="main-heart">
+                ❤️
+            </div>
+
+
+            <h1>
+                Para Bel
+            </h1>
+
+
+            <p class="subtitle">
+
+                Hay cosas que quizás son difíciles
+                de decir mirando a los ojos...
+
+                así que decidí escribirlas.
+
+            </p>
+
+
+            <button
+                class="music-button"
+                id="musicButton"
+            >
+
+                🎹 Reproducir nuestra melodía
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CARTA
+        ====================================== -->
+
+        <article class="letter">
+
+
+            <div class="poem">
+
+
+                <div class="poem-title">
+                    A pesar de todo, Bel
+                </div>
+
+
+                <p>
+                    Leí cada una de tus razones
+                    y me quedé pensando en algo:
+                    ¿cómo puede alguien seguir queriéndome tanto
+                    después de haber visto también mis errores?
+                </p>
+
+
+                <p>
+                    Sé que no fui perfecto,
+                    sé que muchas veces fallé,
+                    que hice cosas que te lastimaron
+                    y que más de una vez
+                    te hice dudar de lo que sentía.
+                </p>
+
+
+                <p>
+                    Y aunque quisiera borrar cada momento
+                    en el que te hice sentir mal,
+                    sé que no puedo cambiar lo que pasó.
+                    Lo único que puedo hacer
+                    es aprender de ello
+                    y demostrarte que puedo hacerlo mejor.
+                </p>
+
+
+                <p>
+                    Porque vos no sos solamente alguien que ame,
+                    sos alguien que quiero cuidar.
+                </p>
+
+
+                <p>
+                    supongo Queria ser esa persona
+                    con la que puedas sentirte tranquila,
+                    con la que puedas reírte de cualquier boludez,
+                    con la que puedas compartir un día entero
+                    sin necesitar que pase nada extraordinario.
+                </p>
+
+
+                <p>
+                    Porque entendí que el amor
+                    no está solamente en decir "te amo".
+                    Está en cuidar, escuchar, respetar,
+                    estar cuando hace falta
+                    y demostrar con hechos
+                    aquello que tantas veces decimos con palabras.
+                </p>
+
+
+                <p>
+                    Y si me preguntás si te elegíria
+                    podría darte diez razones,
+                    cien, o quizás ninguna,
+                    porque hay cosas que el corazón
+                    simplemente siente.
+                </p>
+
+
+                <p>
+                    Te elijiria por tu forma de ser,
+                    por tu sonrisa,
+                    por tus ocurrencias,
+                    por esos momentos simples
+                    que terminan siendo mis favoritos.
+                </p>
+
+
+                <p>
+                    Te elijo por cómo me hacés sentir,
+                    por todo lo que compartimos
+                    y hasta por esas pequeñas peleas
+                    que después nos hacen volver a buscarnos.
+                </p>
+
+
+                <p>
+                    Pero sobre todo,
+                    te elijo porque sos vos.
+                </p>
+
+
+                <p>
+                    Y Bel...
+
+                    si alguna vez mis errores hicieron que olvidaras
+                    lo mucho que significás para mí,
+                    quiero que recuerdes esto:
+                </p>
+
+
+                <p class="highlight">
+                    Nunca dije que te ame o algo así
+                    pero si lo hice y lo hago.
+                </p>
+
+
+                <p>
+                    Tal vez no siempre supe demostrarlo,
+                    tal vez muchas veces lo hice mal,
+                    pero lo que sentí por vos
+                    siempre fue verdadero.
+                </p>
+
+
+                <p>
+                    Gracias por seguir viendo algo bueno en mí
+                    cuando yo mismo no supe demostrarlo.
+                </p>
+
+
+                <p>
+                    Gracias por quererme,
+                    por elegirme,
+                    por compartir tu tiempo conmigo
+                    y por regalarme esos momentos
+                    que guardo mucho más de lo que imaginás.
+                </p>
+
+
+                <p>
+                    Y si alguna vez me preguntás
+                    qué quiero de todo esto,
+                    no quiero prometerte un amor perfecto,
+                    porque sé que no existe.
+                </p>
+
+
+                <p>
+                    y quería decirte esto
+                </p>
+
+
+                <p class="highlight">
+                    Porque te ame y te amo Bel.
+                </p>
+
+
+                <p>
+                    Y a pesar de mis errores,
+                    a pesar de todo lo que hice mal,
+                    si todavía existió un lugar para mi al lado tuyo o existe
+                    quiero agradecerte la verdad y decirte que,
+                    que lindo hacerte lindo pequeños momentos hermosos y lindos
+                </p>
+
+
+                <div class="final-message">
+
+                    Te amo muchísimo. ❤️
+
+                </div>
+
+
+                <div class="signature">
+
+                    Con todo mi amor ❤️
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+        <div class="footer">
+
+            Hecho con todo el corazón para Bel ✨
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         MÚSICA
+    ====================================== -->
+
+    <script>
+
+
+        /* =====================================
+           ESTRELLAS
+        ===================================== */
+
+        const stars =
+            document.getElementById("stars");
+
+
+        for (
+            let i = 0;
+            i < 180;
+            i++
+        ) {
+
+            const star =
+                document.createElement("span");
+
+
+            star.className =
+                "star";
+
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+
+            star.style.animationDelay =
+                Math.random() * 4 + "s";
+
+
+            star.style.animationDuration =
+                (2 + Math.random() * 4) + "s";
+
+
+            stars.appendChild(star);
+        }
+
+
+
+        /* =====================================
+           CORAZONES
+        ===================================== */
+
+        const hearts =
+            document.getElementById("hearts");
+
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("span");
+
+
+            heart.className =
+                "floating-heart";
+
+
+            heart.innerHTML =
+                Math.random() > 0.4
+                ? "♥"
+                : "♡";
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                (12 + Math.random() * 24) + "px";
+
+
+            const duration =
+                7 + Math.random() * 8;
+
+
+            heart.style.animationDuration =
+                duration + "s";
+
+
+            hearts.appendChild(heart);
+
+
+            setTimeout(
+                () => heart.remove(),
+                duration * 1000
+            );
+        }
+
+
+        setInterval(
+            createHeart,
+            700
+        );
+
+
+
+        /* =====================================
+           MÚSICA ROMÁNTICA
+        ===================================== */
+
+        let audioContext = null;
+
+        let masterGain = null;
+
+        let playing = false;
+
+        let musicTimer = null;
+
+
+        const musicButton =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        /*
+            Melodía original de piano.
+            Se genera directamente
+            en el navegador.
+        */
+
+
+        function playNote(
+            frequency,
+            start,
+            duration,
+            volume = 0.08
+        ) {
+
+            const oscillator =
+                audioContext.createOscillator();
+
+
+            const gain =
+                audioContext.createGain();
+
+
+            oscillator.type =
+                "sine";
+
+
+            oscillator.frequency.value =
+                frequency;
+
+
+            gain.gain.setValueAtTime(
+                0,
+                start
+            );
+
+
+            gain.gain.linearRampToValueAtTime(
+                volume,
+                start + 0.05
+            );
+
+
+            gain.gain.exponentialRampToValueAtTime(
+                0.001,
+                start + duration
+            );
+
+
+            oscillator.connect(gain);
+
+
+            gain.connect(
+                masterGain
+            );
+
+
+            oscillator.start(
+                start
+            );
+
+
+            oscillator.stop(
+                start + duration + 0.1
+            );
+        }
+
+
+
+        function playChord(
+            frequencies,
+            start,
+            duration
+        ) {
+
+            frequencies.forEach(
+                frequency => {
+
+                    playNote(
+                        frequency,
+                        start,
+                        duration,
+                        0.025
+                    );
+
+                }
+            );
+        }
+
+
+
+        function playMelody() {
+
+            const start =
+                audioContext.currentTime + 0.1;
+
+
+            /*
+                Melodía romántica
+                estilo piano suave.
+            */
+
+
+            const melody = [
+
+                [261.63, 0.0, 1.0],
+                [329.63, 1.0, 1.0],
+                [392.00, 2.0, 1.4],
+
+                [349.23, 3.4, 0.9],
+                [329.63, 4.3, 0.9],
+                [293.66, 5.2, 1.4],
+
+                [261.63, 6.6, 1.0],
+                [329.63, 7.6, 1.0],
+                [440.00, 8.6, 1.5],
+
+                [392.00, 10.1, 1.0],
+                [349.23, 11.1, 1.0],
+                [329.63, 12.1, 1.5],
+
+                [293.66, 13.6, 1.0],
+                [349.23, 14.6, 1.0],
+                [392.00, 15.6, 1.5],
+
+                [329.63, 17.1, 1.0],
+                [293.66, 18.1, 1.0],
+                [261.63, 19.1, 2.3]
+            ];
+
+
+            melody.forEach(
+                note => {
+
+                    playNote(
+                        note[0],
+                        start + note[1],
+                        note[2],
+                        0.075
+                    );
+
+                }
+            );
+
+
+            /*
+                Acordes suaves de fondo
+            */
+
+
+            const chords = [
+
+                [
+                    [261.63, 329.63, 392.00],
+                    0
+                ],
+
+                [
+                    [293.66, 349.23, 440.00],
+                    5.2
+                ],
+
+                [
+                    [261.63, 329.63, 392.00],
+                    10.1
+                ],
+
+                [
+                    [349.23, 440.00, 523.25],
+                    15.6
+                ],
+
+                [
+                    [261.63, 329.63, 392.00],
+                    19.1
+                ]
+            ];
+
+
+            chords.forEach(
+                chord => {
+
+                    playChord(
+                        chord[0],
+                        start + chord[1],
+                        3.8
+                    );
+
+                }
+            );
+
+
+            musicTimer =
+                setTimeout(
+                    () => {
+
+                        if (playing) {
+                            playMelody();
+                        }
+
+                    },
+                    22000
+                );
+        }
+
+
+
+        /* =====================================
+           BOTÓN
+        ===================================== */
+
+        musicButton.addEventListener(
+            "click",
+            async function () {
+
+                if (!audioContext) {
+
+                    audioContext =
+                        new (
+                            window.AudioContext ||
+                            window.webkitAudioContext
+                        )();
+
+
+                    masterGain =
+                        audioContext.createGain();
+
+
+                    masterGain.gain.value =
+                        0.65;
+
+
+                    masterGain.connect(
+                        audioContext.destination
+                    );
+                }
+
+
+                if (!playing) {
+
+                    playing = true;
+
+
+                    await audioContext.resume();
+
+
+                    playMelody();
+
+
+                    musicButton.innerHTML =
+                        "⏸️ Pausar nuestra melodía";
+
+                }
+
+                else {
+
+                    playing = false;
+
+
+                    clearTimeout(
+                        musicTimer
+                    );
+
+
+                    await audioContext.suspend();
+
+
+                    musicButton.innerHTML =
+                        "🎹 Reproducir nuestra melodía";
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
