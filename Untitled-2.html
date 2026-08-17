@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para Bel ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    font-family:Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,80,150,.25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(130,70,255,.25), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(255,0,100,.18), transparent 35%),
+        linear-gradient(135deg,#08020f,#1a061f,#08020d);
+}
+
+
+/* =========================
+   FONDO ANIMADO
+========================= */
+
+.aurora{
+    position:fixed;
+    width:150%;
+    height:150%;
+    left:-25%;
+    top:-25%;
+
+    background:
+        radial-gradient(
+            ellipse at 30% 40%,
+            rgba(255,0,120,.18),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 70% 60%,
+            rgba(110,30,255,.18),
+            transparent 35%
+        );
+
+    filter:blur(70px);
+
+    animation:
+        moverAurora 12s ease-in-out infinite alternate;
+
+    z-index:-3;
+}
+
+
+@keyframes moverAurora{
+
+    from{
+        transform:translate(-3%,-2%) scale(1);
+    }
+
+    to{
+        transform:translate(3%,2%) scale(1.08);
+    }
+
+}
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+.estrellas{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+}
+
+
+.estrella{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.6;
+
+    animation:
+        brillo 3s infinite ease-in-out;
+}
+
+
+@keyframes brillo{
+
+    0%,100%{
+        opacity:.15;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.corazones{
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+}
+
+
+.corazon{
+    position:absolute;
+
+    bottom:-50px;
+
+    color:#ff6fae;
+
+    opacity:0;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(255,80,150,.8)
+        );
+
+    animation:
+        subirCorazon linear forwards;
+}
+
+
+@keyframes subirCorazon{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.8;
+    }
+
+    80%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            rotate(25deg)
+            scale(1.2);
+
+        opacity:0;
+    }
+
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor{
+
+    width:min(900px,92%);
+
+    margin:auto;
+
+    padding:
+        60px
+        0
+        100px;
+
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada{
+
+    min-height:70vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+.miniTitulo{
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:12px;
+
+    opacity:.7;
+
+    margin-bottom:20px;
+
+}
+
+
+h1{
+
+    font-size:
+        clamp(
+            60px,
+            13vw,
+            120px
+        );
+
+    font-weight:normal;
+
+    font-style:italic;
+
+    line-height:.9;
+
+    text-shadow:
+        0 0 20px rgba(255,80,160,.5),
+        0 0 50px rgba(255,50,140,.25);
+
+}
+
+
+.subtitulo{
+
+    max-width:650px;
+
+    margin-top:30px;
+
+    font-size:
+        clamp(
+            17px,
+            3vw,
+            23px
+        );
+
+    line-height:1.7;
+
+    opacity:.85;
+
+}
+
+
+.corazonGrande{
+
+    font-size:50px;
+
+    margin-top:25px;
+
+    animation:
+        latido 1.8s infinite ease-in-out;
+
+}
+
+
+@keyframes latido{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+
+/* =========================
+   BOTON MUSICA
+========================= */
+
+.botonMusica{
+
+    margin-top:30px;
+
+    padding:
+        14px
+        25px;
+
+    border-radius:999px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:white;
+
+    backdrop-filter:blur(15px);
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.3);
+
+}
+
+
+.botonMusica:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(255,255,255,.15);
+
+}
+
+
+/* =========================
+   CARTA
+========================= */
+
+.carta{
+
+    position:relative;
+
+    padding:
+        clamp(
+            30px,
+            7vw,
+            65px
+        );
+
+    margin-top:20px;
+
+    border-radius:30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.11),
+            rgba(255,255,255,.035)
+        );
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(0,0,0,.45),
+
+        inset 0 1px
+        rgba(255,255,255,.12);
+
+}
+
+
+.carta::before{
+
+    content:"♥";
+
+    position:absolute;
+
+    top:-24px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size:35px;
+
+    color:#ff6fae;
+
+    text-shadow:
+        0 0 25px #ff3d8c;
+
+}
+
+
+/* =========================
+   POEMA
+========================= */
+
+.poema{
+
+    font-size:
+        clamp(
+            17px,
+            2.4vw,
+            21px
+        );
+
+    line-height:1.9;
+
+}
+
+
+.poema p{
+
+    margin-bottom:30px;
+
+}
+
+
+.destacado{
+
+    text-align:center;
+
+    font-size:
+        clamp(
+            25px,
+            5vw,
+            40px
+        );
+
+    font-style:italic;
+
+    line-height:1.4;
+
+    margin:
+        50px 0;
+
+    color:#ffd5e7;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,70,150,.35);
+
+}
+
+
+/* =========================
+   FIRMA
+========================= */
+
+.firma{
+
+    margin-top:50px;
+
+    text-align:right;
+
+    font-size:25px;
+
+    font-style:italic;
+
+    color:#ffd1e5;
+
+}
+
+
+/* =========================
+   ANIMACION ENTRADA
+========================= */
+
+.aparecer{
+
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    animation:
+        aparecer 1.4s
+        ease forwards;
+
+}
+
+
+@keyframes aparecer{
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    opacity:.5;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media(max-width:600px){
+
+    .contenedor{
+
+        padding-top:30px;
+
+    }
+
+
+    .portada{
+
+        min-height:60vh;
+
+    }
+
+
+    .carta{
+
+        border-radius:22px;
+
+    }
+
+
+    .poema{
+
+        line-height:1.75;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Fondo -->
+
+<div class="aurora"></div>
+
+<div class="estrellas" id="estrellas"></div>
+
+<div class="corazones" id="corazones"></div>
+
+
+
+<main class="contenedor">
+
+
+<!-- =========================
+     PORTADA
+========================= -->
+
+<section class="portada aparecer">
+
+    <div class="miniTitulo">
+        Para alguien muy especial
+    </div>
+
+
+    <h1>
+        Bel ❤️
+    </h1>
+
+
+    <p class="subtitulo">
+
+        Algunas personas llegan a nuestra vida
+        sin hacer ruido...
+
+        y terminan convirtiéndose
+        en una parte de nuestro corazón.
+
+    </p>
+
+
+    <div class="corazonGrande">
+        ❤️
+    </div>
+
+
+    <button
+        class="botonMusica"
+        id="botonMusica"
+    >
+
+        ♫ Reproducir música
+
+    </button>
+
+</section>
+
+
+
+<!-- =========================
+     CARTA
+========================= -->
+
+<article class="carta aparecer">
+
+
+<div class="poema">
+
+
+<p>
+
+Leí cada una de tus razones
+y me quedé pensando en algo:
+
+¿cómo puede alguien seguir queriéndome tanto
+después de haber visto también mis errores?
+
+</p>
+
+
+
+<p>
+
+Sé que no fui perfecto,
+
+sé que muchas veces fallé,
+
+que hice cosas que te lastimaron
+
+y que más de una vez
+
+te hice dudar de lo que sentía.
+
+</p>
+
+
+
+<p>
+
+Y aunque quisiera borrar cada momento
+en el que te hice sentir mal,
+
+sé que no puedo cambiar lo que pasó.
+
+Lo único que puedo hacer
+es aprender de ello
+
+y demostrarte que puedo hacerlo mejor.
+
+</p>
+
+
+
+<div class="destacado">
+
+Porque vos no sos solamente
+alguien que amo,
+
+<br>
+
+sos alguien que quiero cuidar.
+
+</div>
+
+
+
+<p>
+
+Quiero ser esa persona
+con la que puedas sentirte tranquila,
+
+con la que puedas reírte
+de cualquier boludez,
+
+con la que puedas compartir
+un día entero
+
+sin necesitar que pase
+nada extraordinario.
+
+</p>
+
+
+
+<p>
+
+Porque entendí que el amor
+
+no está solamente
+en decir "te amo".
+
+Está en cuidar,
+escuchar,
+respetar,
+
+estar cuando hace falta
+
+y demostrar con hechos
+
+aquello que tantas veces
+decimos con palabras.
+
+</p>
+
+
+
+<p>
+
+Y si me preguntás
+por qué te sigo eligiendo,
+
+podría darte diez razones,
+
+cien,
+
+o quizás ninguna,
+
+porque hay cosas
+que el corazón
+
+simplemente siente.
+
+</p>
+
+
+
+<p>
+
+Te elijo por tu forma de ser,
+
+por tu sonrisa,
+
+por tus ocurrencias,
+
+por esos momentos simples
+
+que terminan siendo
+mis favoritos.
+
+</p>
+
+
+
+<p>
+
+Te elijo por cómo me hacés sentir,
+
+por todo lo que compartimos
+
+y hasta por esas pequeñas peleas
+
+que después nos hacen
+volver a buscarnos.
+
+</p>
+
+
+
+<div class="destacado">
+
+Pero sobre todo,
+
+<br>
+
+te elijo porque sos vos.
+
+</div>
+
+
+
+<p>
+
+Y Bel...
+
+si alguna vez mis errores hicieron
+que olvidaras
+
+lo mucho que significás para mí,
+
+quiero que recuerdes esto:
+
+</p>
+
+
+
+<div class="destacado">
+
+Nunca dejé de quererte.
+
+</div>
+
+
+
+<p>
+
+Tal vez no siempre supe demostrarlo,
+
+tal vez muchas veces lo hice mal,
+
+pero lo que sentí por vos
+
+siempre fue verdadero.
+
+</p>
+
+
+
+<p>
+
+Gracias por seguir viendo
+algo bueno en mí
+
+cuando yo mismo
+no supe demostrarlo.
+
+</p>
+
+
+
+<p>
+
+Gracias por quererme,
+
+por elegirme,
+
+por compartir tu tiempo conmigo
+
+y por regalarme esos momentos
+
+que guardo mucho más
+de lo que imaginás.
+
+</p>
+
+
+
+<p>
+
+Y si alguna vez me preguntás
+
+qué quiero de todo esto,
+
+no quiero prometerte
+un amor perfecto,
+
+porque sé que no existe.
+
+</p>
+
+
+
+<p>
+
+Quiero prometerte
+algo más real:
+
+</p>
+
+
+
+<div class="destacado">
+
+quiero aprender
+a amarte mejor.
+
+</div>
+
+
+
+<p>
+
+Porque te amo, Bel.
+
+Y a pesar de mis errores,
+
+a pesar de todo lo que hice mal,
+
+si todavía existe un lugar
+para mí a tu lado,
+
+quiero ganármelo con hechos,
+
+día a día.
+
+</p>
+
+
+
+<div class="firma">
+
+Te amo muchísimo. ❤️
+
+</div>
+
+
+</div>
+
+</article>
+
+
+
+<div class="footer">
+
+Hecho con cariño, para Bel ✨
+
+</div>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================
+   ESTRELLAS
+========================= */
+
+const estrellas =
+document.getElementById("estrellas");
+
+
+for(let i=0;i<100;i++){
+
+    const estrella =
+    document.createElement("span");
+
+    estrella.className =
+    "estrella";
+
+
+    estrella.style.left =
+    Math.random()*100+"%";
+
+
+    estrella.style.top =
+    Math.random()*100+"%";
+
+
+    estrella.style.animationDelay =
+    Math.random()*4+"s";
+
+
+    estrella.style.animationDuration =
+    (2+Math.random()*3)+"s";
+
+
+    estrellas.appendChild(
+        estrella
+    );
+
+}
+
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+const corazones =
+document.getElementById("corazones");
+
+
+function crearCorazon(){
+
+    const corazon =
+    document.createElement("span");
+
+
+    corazon.className =
+    "corazon";
+
+
+    corazon.textContent =
+    Math.random()>.3
+    ? "♥"
+    : "♡";
+
+
+    corazon.style.left =
+    Math.random()*100+"%";
+
+
+    corazon.style.fontSize =
+    (12+Math.random()*25)+"px";
+
+
+    corazon.style.animationDuration =
+    (7+Math.random()*8)+"s";
+
+
+    corazones.appendChild(
+        corazon
+    );
+
+
+    setTimeout(()=>{
+
+        corazon.remove();
+
+    },15000);
+
+}
+
+
+setInterval(
+    crearCorazon,
+    650
+);
+
+
+
+/* =========================
+   MUSICA
+========================= */
+
+/*
+
+La música se genera directamente
+desde el navegador.
+
+No necesitás descargar ningún MP3.
+
+*/
+
+let audioContext = null;
+
+let reproduciendo = false;
+
+let timer = null;
+
+
+
+const notas = [
+
+    [261.63,0.00],
+
+    [329.63,0.45],
+
+    [392.00,0.90],
+
+    [329.63,1.35],
+
+    [293.66,1.80],
+
+    [349.23,2.25],
+
+    [440.00,2.70],
+
+    [349.23,3.15],
+
+    [261.63,3.60],
+
+    [329.63,4.05],
+
+    [392.00,4.50],
+
+    [523.25,4.95],
+
+    [440.00,5.40],
+
+    [392.00,5.85],
+
+    [329.63,6.30],
+
+    [293.66,6.75]
+
+];
+
+
+
+function tocarNota(
+    frecuencia,
+    tiempo,
+    duracion=.38
+){
+
+    const oscilador =
+    audioContext.createOscillator();
+
+
+    const volumen =
+    audioContext.createGain();
+
+
+    oscilador.type =
+    "sine";
+
+
+    oscilador.frequency.value =
+    frecuencia;
+
+
+    volumen.gain.setValueAtTime(
+        0,
+        tiempo
+    );
+
+
+    volumen.gain.linearRampToValueAtTime(
+        .045,
+        tiempo+.04
+    );
+
+
+    volumen.gain.exponentialRampToValueAtTime(
+        .001,
+        tiempo+duracion
+    );
+
+
+    oscilador.connect(
+        volumen
+    );
+
+
+    volumen.connect(
+        audioContext.destination
+    );
+
+
+    oscilador.start(
+        tiempo
+    );
+
+
+    oscilador.stop(
+        tiempo+duracion+.03
+    );
+
+}
+
+
+
+function reproducirMelodia(){
+
+    const inicio =
+    audioContext.currentTime+.08;
+
+
+    notas.forEach(
+        ([frecuencia,offset])=>{
+
+            tocarNota(
+                frecuencia,
+                inicio+offset
+            );
+
+        }
+    );
+
+
+    timer =
+    setTimeout(()=>{
+
+        if(reproduciendo){
+
+            reproducirMelodia();
+
+        }
+
+    },7200);
+
+}
+
+
+
+/* =========================
+   BOTON
+========================= */
+
+const boton =
+document.getElementById(
+    "botonMusica"
+);
+
+
+boton.addEventListener(
+    "click",
+    async()=>{
+
+
+        if(!reproduciendo){
+
+            reproduciendo=true;
+
+
+            if(!audioContext){
+
+                audioContext =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+
+            }
+
+
+            await audioContext.resume();
+
+
+            reproducirMelodia();
+
+
+            boton.textContent =
+            "Ⅱ Pausar música";
+
+
+        }
+
+        else{
+
+            reproduciendo=false;
+
+
+            clearTimeout(timer);
+
+
+            await audioContext.suspend();
+
+
+            boton.textContent =
+            "♫ Reproducir música";
+
+        }
+
+    }
+);
+
+
+</script>
+
+
+</body>
+</html>
